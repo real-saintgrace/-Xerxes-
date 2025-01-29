@@ -9,17 +9,21 @@ getgenv().Camlock = {
     ["Prediction"] = 0.146, -- calculate for target aim precision
     ["UseSmoothness"] = true, -- If true, makes aiming smooth; if false, locks instantly
     ["SmoothnessValue"] = 0.012, -- Controls how smooth the aim moves
-    
-    ["EasingStyle"] = Enum.EasingStyle.Exponential, -- Controls how the aim moves (smooth, bouncy, etc.)
-    -- Available Styles: Linear, Quad, Cubic, Quart, Quint, Sine, Back, Bounce, Elastic (See link above)
 
     ["AirShot"] = true, -- If true, adjust smoothness when in the air
     ["AirShotSmooth"] = 0.021, -- How smooth the camera will move when you are in the air
 
+    ["EasingStyle"] = Enum.EasingStyle.Exponential, -- Controls how the aim moves (smooth, bouncy, etc.)
+    -- Available Styles: Linear, Quad, Cubic, Quart, Quint, Sine, Back, Bounce, Elastic (See link above)
     ["EasingDirection"] = Enum.EasingDirection.InOut, -- Decides how the easing applies
     -- In = Starts slow, speeds up | Out = Starts fast, slows down | InOut = Both combined
 
-    --// FOV (Field of View) Settings
+    ["SafetyChecks"] = {
+        ["Resolver"] = true,
+        ["DetectionValue"] = 50, -- How strong detection needs to be
+        ["OverrideYAxis"] = true, -- Will override the Y axis (very legit!)
+    },
+
     ["FOV"] = {
         ["Visible"] = true, -- Show or hide the FOV circle
         ["Thickness"] = 0.5, -- Thickness of the FOV circle
@@ -29,13 +33,6 @@ getgenv().Camlock = {
         ["Transparency"] = 0.2, -- How see-through the FOV circle is
         ["Color"] = Color3.fromRGB(173, 217, 230), -- Color of the FOV circle
         ["Mode"] = "PC" -- Use "PC" for computer, "Mobile" for mobile
-    },
-
-    --// SafetyChecks
-    ["SafetyChecks"] = {
-        ["Resolver"] = true,
-        ["DetectionValue"] = 50, -- How strong detection needs to be
-        ["OverrideYAxis"] = true, -- Will override the Y axis (very legit!)
     }
 }
 
